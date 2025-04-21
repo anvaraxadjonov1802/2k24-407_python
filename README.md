@@ -1,63 +1,47 @@
 ```markdown
-# 🗂 2papka - Veb sahifani skreyp qilish loyihasi
+# 🗂 2papka - Veb sahifa scraper va ma'lumotlar bazasi integratsiyasi
 
-Bu loyiha Selenium va BeautifulSoup yordamida veb sahifani avtomatik tarzda ochish, skroll qilish, kerakli tugmalarni bosish va sahifadan kerakli ma'lumotlarni ajratib olish uchun ishlab chiqilgan. Loyihada, shuningdek, ijtimoiy tarmoqlarga oid havolalar va ko‘nikmalar (skills) bo‘yicha ma’lumotlar ham yig‘iladi.
+Bu papkada veb sahifani avtomatik tarzda skreyp qilish va olinadigan ma’lumotlarni ma’lumotlar bazasiga yozish bo‘yicha Python loyihasi joylashgan. Loyiha `Selenium`, `BeautifulSoup`, va `psycopg2` kutubxonalaridan foydalanadi.
 
 ---
 
-## 📌 Asosiy funksiyalar:
+## 📁 Loyihaning tuzilmasi:
 
-- Saytga avtomatik kirish
-- Sahifa bo‘ylab harakatlanish (scroll)
-- "View Details" tugmasini topib, bosish
-- Sahifadagi:
-  - Sarlavha (`title`)
-  - Tavsif (`description`)
-  - Rasm (`image_url`)
-  - Sanalar (`obtained_date`)
-  - Ko‘nikmalar (`skills`)
-  - Ijtimoiy tarmoq havolalari (`social_links`)
-  
-  kabi ma'lumotlarni ajratib olish
+- `main.py` — asosiy ishga tushadigan fayl, barcha jarayonlarni boshqaradi
+- `config.py` — konfiguratsiyalar (masalan: baza ma’lumotlari, URL-lar)
+- `database.py` — PostgreSQL bilan ishlovchi funksiyalar
+- `models.py` — ma’lumotlar tuzilmasi va ularni qayta ishlash
+- `output/` — skreyp qilingan ma’lumotlar saqlanadigan joy (agar faylga yozilsa)
+- `requirements.txt` — zarur kutubxonalar ro‘yxati
 
 ---
 
 ## 🧰 Ishlatilgan texnologiyalar:
 
-- `Python`
-- `Selenium`
-- `BeautifulSoup`
-- `webdriver-manager`
-- `psycopg2` (bazaga ulanish uchun tayyorlangan)
-- `Chrome WebDriver`
+- Python 3.x
+- Selenium
+- BeautifulSoup4
+- psycopg2
+- webdriver-manager
 
 ---
 
-## 📂 Loyihaning tuzilmasi:
-
-```
-2papka/
-├── main.py              # Dastur ishga tushuvchi fayl
-├── requirements.txt     # Zaruriy kutubxonalar
-└── README.md            # Loyihaga oid hujjat (mana shu fayl)
-```
-
----
-
-## ⚙️ O‘rnatish va ishga tushirish:
+## ⚙️ O‘rnatish:
 
 ```bash
 # repozitoriyani klon qilish
-git clone https://github.com/username/repository-name.git
+git clone https://github.com/username/repo-nomi.git
 
-# 2papka ichiga o‘tish
-cd repository-name/2papka
+# papkaga o‘tish
+cd repo-nomi/2papka
 
-# Kutubxonalarni o‘rnatish
+# virtual muhit yaratish (ixtiyoriy)
+python -m venv venv
+source venv/bin/activate  # yoki Windows: venv\Scripts\activate
+
+# kerakli kutubxonalarni o‘rnatish
 pip install -r requirements.txt
 
-# Dastur ishga tushiriladi
-python main.py
 ```
 
 ---
