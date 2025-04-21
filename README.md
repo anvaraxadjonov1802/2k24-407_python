@@ -1,5 +1,5 @@
 ```markdown
-# 🗂 2papka - Veb sahifa scraper va ma'lumotlar bazasi integratsiyasi
+# 🗂 2-papka - Veb sahifa scraper va ma'lumotlar bazasi integratsiyasi
 
 Bu papkada veb sahifani avtomatik tarzda skreyp qilish va olinadigan ma’lumotlarni ma’lumotlar bazasiga yozish bo‘yicha Python loyihasi joylashgan. Loyiha `Selenium`, `BeautifulSoup`, va `psycopg2` kutubxonalaridan foydalanadi.
 
