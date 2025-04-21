@@ -28,7 +28,6 @@ Task1_lab1/
 ├── output/
 │   └── data.txt      # Captured/raw scraped output
 ├── requirements.txt  # Python dependencies
-└── .idea/            # IDE configuration (ignore in production)
 ```
 
 
