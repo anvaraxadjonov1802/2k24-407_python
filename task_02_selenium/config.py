@@ -1,0 +1,5 @@
+DB_NAME = "lab_db"
+DB_USER = "lab_user"
+DB_PASS = "password"
+DB_HOST = "localhost"
+DB_PORT = "5432"
