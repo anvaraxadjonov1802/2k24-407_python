@@ -1,71 +1,81 @@
+---
+
 ```markdown
-# 🗂 2-papka - Veb sahifa scraper va ma'lumotlar bazasi integratsiyasi
+<h1 align="center">📁 2papka - Veb Sahifa Scraper & Ma'lumotlar Bazasi Integratsiyasi</h1>
 
-Bu papkada veb sahifani avtomatik tarzda skreyp qilish va olinadigan ma’lumotlarni ma’lumotlar bazasiga yozish bo‘yicha Python loyihasi joylashgan. Loyiha `Selenium`, `BeautifulSoup`, va `psycopg2` kutubxonalaridan foydalanadi.
-
----
-
-## 📁 Loyihaning tuzilmasi:
-
-- `main.py` — asosiy ishga tushadigan fayl, barcha jarayonlarni boshqaradi
-- `config.py` — konfiguratsiyalar (masalan: baza ma’lumotlari, URL-lar)
-- `database.py` — PostgreSQL bilan ishlovchi funksiyalar
-- `models.py` — ma’lumotlar tuzilmasi va ularni qayta ishlash
-- `output/` — skreyp qilingan ma’lumotlar saqlanadigan joy (agar faylga yozilsa)
-- `requirements.txt` — zarur kutubxonalar ro‘yxati
+<p align="center">
+  <b>Veb sahifalarni avtomatlashtirilgan tarzda skreyp qilish, ma'lumotlarni qayta ishlash va PostgreSQL bazasiga yozish loyihasi.</b>
+</p>
 
 ---
 
-## 🧰 Ishlatilgan texnologiyalar:
+## 📂 Papka tuzilmasi
 
-- Python 3.x
-- Selenium
-- BeautifulSoup4
-- psycopg2
-- webdriver-manager
-
----
-
-## ⚙️ O‘rnatish:
-
-```bash
-# repozitoriyani klon qilish
-git clone https://github.com/username/repo-nomi.git
-
-# papkaga o‘tish
-cd repo-nomi/2papka
-
-# virtual muhit yaratish (ixtiyoriy)
-python -m venv venv
-source venv/bin/activate  # yoki Windows: venv\Scripts\activate
-
-# kerakli kutubxonalarni o‘rnatish
-pip install -r requirements.txt
-
+```
+2papka/
+├── config.py         # Loyihaning sozlamalari
+├── database.py       # PostgreSQL bilan aloqa funksiyalari
+├── main.py           # Loyihaning ishga tushiriladigan fayli
+├── models.py         # Ma'lumotlar tuzilmalari
+├── output/           # Skreyp qilingan natijalar
+└── requirements.txt  # Kutubxonalar ro'yxati
 ```
 
 ---
 
-## 💡 Eslatma
+## 🛠 Texnologiyalar
 
-> Ushbu loyiha Google Chrome brauzeri va `chromedriver` bilan ishlaydi. `webdriver-manager` esa kerakli driver’ni avtomatik yuklaydi.
+- 🐍 Python 3.x  
+- 🌐 Selenium  
+- 🧼 BeautifulSoup4  
+- 🐘 psycopg2  
+- ⚙️ Webdriver Manager  
+
+---
+
+## 📦 O‘rnatish
+
+```bash
+# 1. Repozitoriyani yuklab oling
+git clone https://github.com/username/repo-nomi.git
+
+# 2. Papkaga kiring
+cd repo-nomi/2papka
+
+# 3. Virtual muhit yarating (ixtiyoriy)
+python -m venv venv
+source venv/bin/activate    # Windows: venv\Scripts\activate
+
+# 4. Kutubxonalarni o'rnating
+pip install -r requirements.txt
+```
+
+---
+
+## 🚀 Ishga tushirish
+
+```bash
+python main.py
+```
+
+📝 *Eslatma:* `config.py` faylida sozlamalarni moslab chiqing (bazaga ulanish ma’lumotlari, URL, va h.k.).
+
+---
+
+## 💡 Qisqacha izohlar
+
+- **`config.py`** — Barcha sozlamalar (URL, baza konfiguratsiyasi).
+- **`database.py`** — Bazaga ulanish, jadval yaratish va yozish funksiyalari.
+- **`main.py`** — Jarayonlarni boshqaruvchi asosiy fayl.
+- **`models.py`** — Ma’lumotlar modelini belgilovchi sinflar.
+- **`output/`** — Chiqarilgan fayllar va skreyp natijalari.
+- **`requirements.txt`** — Barcha kerakli kutubxonalar ro‘yxati.
 
 ---
 
 ## 🤝 Hissa qo‘shish
 
-Agar sizda yaxshilash bo‘yicha fikrlar bo‘lsa, bemalol `pull request` yuboring yoki `issue` oching.
+> Takliflaringizni va tuzatishlaringizni mamnuniyat bilan kutamiz!  
+> Pull Request yuboring yoki `issue` oching.
 
 ---
-
-## 📄 Litsenziya
-
-Ushbu loyiha [MIT License](LICENSE) ostida tarqatiladi.
-
----
-
-```
-
----
-
-Agar loyihada qo‘shimcha fayllar yoki imkoniyatlar mavjud bo‘lsa, ayting — `README.md`ni yanada boyitib beraman. Yoki `psycopg2` bilan ishlatiladigan qism ham bo‘lsa, uni ham qo‘shib beraman.
