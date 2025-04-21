@@ -37,8 +37,8 @@ Task1_lab1/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/username/repo-name.git
-   cd repo-name/Task1_lab1
+   git clone https://github.com/anvaraxadjonov1802/2k24-407_python.git
+   cd 2k24-407_python/Task1_lab1
    ```
 2. **Create and activate a virtual environment** (optional but recommended)
    ```bash
@@ -65,9 +65,6 @@ DB_PORT = 5432
 DB_NAME = 'your_database'
 DB_USER = 'your_user'
 DB_PASSWORD = 'your_password'
-
-# Target URL for scraping
-target_url = 'https://example.com'
 ```
 
 
@@ -87,20 +84,4 @@ python main.py
 
 ---
 
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to submit issues or pull requests:
-
-1. Fork the repo
-2. Create a feature branch (`git checkout -b feature/YourFeature`)
-3. Commit your changes (`git commit -m "Add your message here"`)
-4. Push to the branch (`git push origin feature/YourFeature`)
-5. Open a Pull Request
-
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License**. See `LICENSE` for details.
 
