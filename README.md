@@ -1,4 +1,3 @@
----
 
 ```markdown
 <h1 align="center">📁 2papka - Veb Sahifa Scraper & Ma'lumotlar Bazasi Integratsiyasi</h1>
