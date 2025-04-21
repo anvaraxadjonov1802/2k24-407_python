@@ -38,7 +38,7 @@ Task1_lab1/
 1. **Clone the repository**
    ```bash
    git clone https://github.com/anvaraxadjonov1802/2k24-407_python.git
-   cd 2k24-407_python/Task1_lab1
+   cd 2k24-407_python/task_02_selenium
    ```
 2. **Create and activate a virtual environment** (optional but recommended)
    ```bash
