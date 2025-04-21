@@ -1,80 +1,107 @@
+# Task1 Lab #1: Web Scraping and Database Integration
 
-```markdown
-<h1 align="center">📁 2papka - Veb Sahifa Scraper & Ma'lumotlar Bazasi Integratsiyasi</h1>
+## 📖 Project Overview
 
-<p align="center">
-  <b>Veb sahifalarni avtomatlashtirilgan tarzda skreyp qilish, ma'lumotlarni qayta ishlash va PostgreSQL bazasiga yozish loyihasi.</b>
-</p>
+This Python project automates web scraping of target web pages using **Selenium** and **BeautifulSoup4**, then processes and stores the extracted data in a **PostgreSQL** database.
 
----
-
-## 📂 Papka tuzilmasi
-
-```
-2papka/
-├── config.py         # Loyihaning sozlamalari
-├── database.py       # PostgreSQL bilan aloqa funksiyalari
-├── main.py           # Loyihaning ishga tushiriladigan fayli
-├── models.py         # Ma'lumotlar tuzilmalari
-├── output/           # Skreyp qilingan natijalar
-└── requirements.txt  # Kutubxonalar ro'yxati
-```
 
 ---
 
-## 🛠 Texnologiyalar
+## 🔍 Key Features
 
-- 🐍 Python 3.x  
-- 🌐 Selenium  
-- 🧼 BeautifulSoup4  
-- 🐘 psycopg2  
-- ⚙️ Webdriver Manager  
+- 🚀 **Automated Browsing**: Launches a browser, navigates, scrolls, and clicks through pages
+- 🧹 **Data Extraction**: Parses HTML to pull out titles, descriptions, images, dates, skills, and social links
+- 🐘 **Database Integration**: Uses `psycopg2` to insert and update scraped data in PostgreSQL
+- 📄 **Output Logging**: Saves raw results to a text file at `output/data.txt`
+
 
 ---
 
-## 📦 O‘rnatish
+## 📁 Project Structure
 
-```bash
-# 1. Repozitoriyani yuklab oling
-git clone https://github.com/username/repo-nomi.git
-
-# 2. Papkaga kiring
-cd repo-nomi/2papka
-
-# 3. Virtual muhit yarating (ixtiyoriy)
-python -m venv venv
-source venv/bin/activate    # Windows: venv\Scripts\activate
-
-# 4. Kutubxonalarni o'rnating
-pip install -r requirements.txt
+```plaintext
+Task1_lab1/
+├── config.py         # Configuration settings (DB credentials, URLs, etc.)
+├── database.py       # PostgreSQL connection and CRUD functions
+├── main.py           # Entry point: orchestrates scraping and DB operations
+├── models.py         # Data model definitions (classes/structures)
+├── output/
+│   └── data.txt      # Captured/raw scraped output
+├── requirements.txt  # Python dependencies
+└── .idea/            # IDE configuration (ignore in production)
 ```
 
+
 ---
 
-## 🚀 Ishga tushirish
+## 🛠 Installation & Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/username/repo-name.git
+   cd repo-name/Task1_lab1
+   ```
+2. **Create and activate a virtual environment** (optional but recommended)
+   ```bash
+   python -m venv venv
+   source venv/bin/activate      # Linux/macOS
+   venv\Scripts\activate       # Windows
+   ```
+3. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+
+---
+
+## ⚙️ Configuration
+
+Edit `config.py` to match your environment:
+
+```python
+# Database settings
+DB_HOST = 'localhost'
+DB_PORT = 5432
+DB_NAME = 'your_database'
+DB_USER = 'your_user'
+DB_PASSWORD = 'your_password'
+
+# Target URL for scraping
+target_url = 'https://example.com'
+```
+
+
+---
+
+## 🚀 Running the Project
+
+Execute the main script to start scraping and database insertion:
 
 ```bash
 python main.py
 ```
 
-📝 *Eslatma:* `config.py` faylida sozlamalarni moslab chiqing (bazaga ulanish ma’lumotlari, URL, va h.k.).
+- Scraped data will be appended to `output/data.txt`
+- Parsed records will be stored in your PostgreSQL database
+
 
 ---
 
-## 💡 Qisqacha izohlar
+## 🤝 Contributing
 
-- **`config.py`** — Barcha sozlamalar (URL, baza konfiguratsiyasi).
-- **`database.py`** — Bazaga ulanish, jadval yaratish va yozish funksiyalari.
-- **`main.py`** — Jarayonlarni boshqaruvchi asosiy fayl.
-- **`models.py`** — Ma’lumotlar modelini belgilovchi sinflar.
-- **`output/`** — Chiqarilgan fayllar va skreyp natijalari.
-- **`requirements.txt`** — Barcha kerakli kutubxonalar ro‘yxati.
+Contributions are welcome! Feel free to submit issues or pull requests:
 
----
+1. Fork the repo
+2. Create a feature branch (`git checkout -b feature/YourFeature`)
+3. Commit your changes (`git commit -m "Add your message here"`)
+4. Push to the branch (`git push origin feature/YourFeature`)
+5. Open a Pull Request
 
-## 🤝 Hissa qo‘shish
-
-> Takliflaringizni va tuzatishlaringizni mamnuniyat bilan kutamiz!  
-> Pull Request yuboring yoki `issue` oching.
 
 ---
+
+## 📄 License
+
+This project is licensed under the **MIT License**. See `LICENSE` for details.
+
