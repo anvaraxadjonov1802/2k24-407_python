@@ -1,4 +1,4 @@
-# Task1 Lab #1: Web Scraping and Database Integration
+# Task02 Selenium: Web Scraping and Database Integration
 
 ## 📖 Project Overview
 
