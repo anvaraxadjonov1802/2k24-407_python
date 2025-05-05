@@ -1,0 +1,38 @@
+{
+    "title": "Full-Stack Web Development Certification",
+    "description": "💻 Build Dynamic & Scalable Web Apps!\n\nMaster both front-end and back-end technologies to create stunning, high-performance websites! 🏆\n💻 Build Dynamic & Scalable Web Apps!",
+    "image_url": "/media/blog/certificate/2025/03/29/programming-background-collage.jpg",
+    "obtained_date": "March-2022",
+    "skills": [
+        {
+            "name": "Authentication & Security",
+            "covered": true
+        },
+        {
+            "name": "Authentication & Security",
+            "covered": true
+        },
+        {
+            "name": "Authentication & Security",
+            "covered": true
+        }
+    ],
+    "social_links": [
+        {
+            "platform": "GitHub",
+            "url": "https://github.com/Shaxzodbek16"
+        },
+        {
+            "platform": "LinkedIn",
+            "url": "https://linkedin.com/in/shaxzodbek-muxtorov-59144a294"
+        },
+        {
+            "platform": "Telegram",
+            "url": "https://t.me/tmshaxzodbek"
+        },
+        {
+            "platform": "YouTube",
+            "url": "https://www.youtube.com/@Shaxzodbek16"
+        }
+    ]
+}

@@ -27,7 +27,7 @@ def create_table():
         title VARCHAR(255) NOT NULL,
         description TEXT,
         image_url VARCHAR(255),
-        obtained_date DATE,
+        obtained_date VARCHAR(20), 
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );
     '''

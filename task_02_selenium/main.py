@@ -6,6 +6,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
+from database import save_all_certification_data
+import json
 
 def scrape_page(driver, url):
     driver.get(url)
@@ -35,12 +37,17 @@ def scrape_page(driver, url):
     desc = '\n'.join(lines[:4])
     image_tag = soup.find('div', class_='certification-image').find('img')
     image_url = image_tag['src'] if image_tag else None
-    date_tag = soup.find('time')
-    obtained_date = date_tag.text.strip() if date_tag else None
+    date_tag = soup.find('div', class_='certification-date').text.strip()
+    data_tag_list = []
+    for i in date_tag.split(' '):
+        data_tag_list.append(i)
+
+    obtained_date = data_tag_list[1]+'-'+data_tag_list[2]
 
     skill_data_dic = {}
     skill_data_list = []
     skill_name = soup.find_all('table')[0].find_all('td')
+    # print(skill_name)
     for i in range(0,len(skill_name), 2):
         skill_data_dic["name"] = skill_name[i].text.strip()
         if skill_name[i+1].text.strip() == skill_name[1].text.strip():
@@ -60,13 +67,6 @@ def scrape_page(driver, url):
         social_data_dic["platform"] = social_media_links[i]['aria-label']
         social_data_dic["url"] = social_media_links[i]['href']
         social_data_list.append(social_data_dic)
-        print(social_data_dic)
-    print(social_data_list)
-
-
-
-
-
 
     # Return parsed data
     return {
@@ -77,12 +77,24 @@ def scrape_page(driver, url):
         "skills": skill_data_list,
         "social_links": social_data_list,
     }
+
+
+def write_to_json_file(data, filename="certification_data.txt"):
+    with open(filename, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=4)
+
 def main():
 
     service = Service(executable_path=ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service)
     driver.maximize_window()
-    scrape_page(driver, url="https://shaxzodbek.com/")
+    data = scrape_page(driver, url="https://shaxzodbek.com/")
+    if data:
+        write_to_json_file(data)  # << bu yerda chaqiramiz
+        save_all_certification_data(data)
+    else:
+        print("Ma'lumotlarni olishda xatolik yuz berdi.")
+
 
 if __name__ == "__main__":
     main()
